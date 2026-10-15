@@ -111,8 +111,13 @@ sys_uptime(void)
   return xticks;
 }
 
-trace(int mask);
+uint64
+sys_trace(int mask)
+{
+myproc()->tracemask = mask;
+  return 0;
+}
 
-sysinfo(struc sysinfo *info);
+//sysinfo(struc sysinfo *info);
 
-getprocs(struct uproc *buf, int max);
+//getprocs(struct uproc *buf, int max);
