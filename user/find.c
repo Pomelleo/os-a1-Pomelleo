@@ -91,7 +91,12 @@ int main(int argc, char *argv[]) {
         if(buf[0] == 0 && buf[1] == 0) continue;
         
         // Extract name from bytes 2-15 (skip 2-byte inum)
-        for(i = 0; i < 14; i++) {
+        for(i = 0; i < 14; i++) {     
+        // Skip . and ..
+        if(name[0] == '.') {
+            if(name[1] == '\0' || (name[1] == '.' && name[2] == '\0')) continue;
+        }
+
             name[i] = buf[2 + i];
             if(name[i] == '\0') break;  // Stop at null terminator
         }
