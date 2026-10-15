@@ -151,6 +151,7 @@ UPROGS=\
 	$U/_dorphan\
 	$U/_sync\
 	$U/_find\
+	$U/_xargs\
 	$U/_sleep\
 
 fs.img: mkfs/mkfs README $(UPROGS)
