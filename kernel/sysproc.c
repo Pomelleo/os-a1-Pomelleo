@@ -110,3 +110,9 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+trace(int mask);
+
+sysinfo(struc sysinfo *info);
+
+getprocs(struct uproc *buf, int max);
